@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block content %}
+<meta
+<section class="page">
+
+{% if state_bool != True %}
+
+    <h2>Enter your Guess</h2>
+
+    <section class="form-input">
+
+        <form  name="form_guess" method="post">
+
+            <div class="guess">
+                <!-- need to send word length -1across-->
+
+                <div class="guess-letter">
+                    <input autofocus type="text" autocomplete="off" class="letter-form" id="letter1" name="letter1" onkeydown="backspace(this, this, event.keyCode)" onKeyup="autotab(this, document.form_guess.letter2)" maxlength="1" style='text-transform:uppercase'>
+                </div>
+
+                {% for num in range(2,length) %}
+
+                  <div class="guess-letter">
+                    <input type="text" autocomplete="off" class="letter-form" id="letter{{num}}" name="letter{{num}}" onkeydown="backspace(this, document.form_guess.letter{{num-1}}, event.keyCode)" onKeyup="autotab(this, document.form_guess.letter{{num+1}})" maxlength="1" style='text-transform:uppercase'>
+                  </div>
+
+                {% endfor %}
+
+                <!-- need to add the last element manually which auto tabs back to begin or button-->
+                <div class="guess-letter">
+                    <input type="text" autocomplete="off" class="letter-form" id="letter+{{length}}" name="letter{{length}}" onkeydown="backspace(this, document.form_guess.letter{{length-1}}, event.keyCode)" onKeyup="autotab(this, this)" maxlength="1" style='text-transform:uppercase'>
+                </div>
+
+            </div>
+
+    </section>
+
+    <section class="keyboard">
+
+        <div class="keyboard-display">
+
+            {% for row in alphabet %}
+
+            <div class="row1">
+
+                {% for let in row %}
+
+                    <span class="{{ let['class'] }}">{{ let['letter'] }}</span>
+
+                {% endfor %}
+
+            </div>
+
+            {% endfor %}
+
+
+
+        </div>
+
+    </section>
+{% else %}
+        <h2 style="padding:1em 0em"  id="time"></h2>
+{% endif %}
+
+    {% if state_bool == True %}
+
+    {% else %}
+
+    <section class="guesses">
+
+        <div class="guess1">
+            <div class="enter">
+                <button type="submit" class="btn-get-started" id="enter_button" >Enter </button>
+            </div>
+            <span class="letter-correct ticks">&#10003&#10003</span>
+            <span class="letter-maybe ticks"> &#10003 </span>
+            <span class="letter-used ticks"> &#10005 </span>
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <section class="guesses">
+
+        {% for guess in guesses %}
+            <div class="guess1">
+
+                {% for let in guess %}
+
+                    <span class=" {{ let['class'] }}">{{ let['letter'] }}</span>
+
+                {% endfor %}
+
+                <span class="points">{{ points[loop.index -1] }}</span>
+
+            </div>
+
+        {% endfor %}
+
+    </section>
+
+    <script>
+
+       document.addEventListener('click', automove)
+       function automove(){
+       letter1.focus()
+       }
+
+        function backspace(current,to,key){
+            if (key == 8) {
+                current.value = ''
+                to.focus()
+            }
+
+        }
+
+        function autotab(current,to){
+            if (current.getAttribute &&
+                current.value.length==current.getAttribute("maxlength")) {
+                to.focus()
+                }
+        }
+    </script>
+
+    <script>
+      // Set the date we're counting down to
+        var tomorrow = "{{ time }}";
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        const date = new Date();
+        const offset = date.getTimezoneOffset();
+
+        // Find the distance between now and the count down date
+        var countdown = tomorrow*1000+(offset*60*1000) - now;
+
+        var hours = Math.floor((countdown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((countdown % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((countdown % (1000 * 60)) / 1000);
+
+        document.getElementById("time").innerHTML = "Time till new word: " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("time").innerHTML = "Refresh the page";
+        }
+        }, 1000);
+
+    </script>
+
+
+</section>
+
+{% endblock %}
+

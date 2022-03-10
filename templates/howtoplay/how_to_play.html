@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="new-page">
+
+<h1 >How to play</h1>
+
+<p>Try and guess the word in as few guesses as possible. <br>
+    The fewer guesses the more points you will earn.<br>
+    The points are shown to the right<span class="points">50</span><br>
+    The colours of the guesses lets you know how accurate your guess was.
+</p>
+
+<h2>Corect Letter and Correct Position</h2>
+
+<div class="correct">
+    <div class="guess1">
+
+        <span class="letter-correct" style="font-size: 2em;">A</span>
+        <span class="letter-correct" style="margin-top: 0.75em; margin-left: 1em; font-size: 1.25em;">&#10003&#10003</span>
+
+    </div>
+</div>
+
+
+<h2>Corect Letter but Incorrect Position</h2>
+
+<div class="correct">
+    <div class="guess1">
+
+        <span class="letter-maybe" style="font-size: 2em;">L</span>
+        <span class="letter-maybe" style="margin-top: 0.75em;font-size: 1.25em;"> &#10003 </span>
+    </div>
+</div>
+
+<h2>Incorret Letter and Incorrect Position</h2>
+
+   <div class="correct">
+        <div class="guess1">
+
+            <span class="letter-used" style="font-size: 2em;">O</span>
+            <span class="letter-used" style="margin-top: 0.75em;font-size: 1.25em;" > &#10005 </span>
+    </div>
+</div>
+
+   <div class="btn-get">
+        <button class="btn-play"><a   href="{{ url_for('play.letters_3') }}">Play Now</a></button>
+    </div>
+
+
+</section>
+
+
+
+
+{% endblock %}

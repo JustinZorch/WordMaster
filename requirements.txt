@@ -1,0 +1,16 @@
+certifi==2021.10.8
+click==8.0.4
+colorama==0.4.4
+dnspython==2.2.0
+Flask==2.0.3
+itsdangerous==2.1.0
+Jinja2==3.0.3
+MarkupSafe==2.1.0
+pymongo==4.0.1
+Werkzeug==2.0.3
+gunicorn
+python-dotenv
+passlib~=1.7.4
+termcolor~=1.1.0
+APScheduler~=3.9.0.post1
+setuptools~=57.0.0

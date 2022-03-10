@@ -1,0 +1,752 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+// var colours
+
+:root {
+    --primary-blue: #3C88FB;
+    --primary-orange: #F69A10;
+    --primary-grey: #CBCAC6;
+    --back-blue: #85C3FD;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+// alerts
+
+.alerts {
+    font-size: 20px;
+    padding: 5px;
+    background-color: pink;
+    color: black;
+}
+// headers
+
+h1 {
+    margin: 0 auto;
+    padding-top: 0px;
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+h2 {
+    margin-top: 10px auto;
+    text-align: center;
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+    padding: 10px;
+}
+
+p {
+    font-size: 15px;
+}
+
+// screen sizes
+
+$laptop: 1024px;
+$tablet: 768px;
+$phone: 480px;
+
+// classes to add on JS call
+
+.menu-active {
+    display: block;
+}
+
+
+
+
+
+// how to play styling
+
+.new-page {
+    background-color: var(--back-blue);
+    margin: auto;
+    width: 75%;
+    height: 100vh;
+    opacity: 90%;
+}
+
+// correct page styling
+
+.correct {
+    display: flex;
+    margin: auto;
+    width: min-content;
+
+    .guess1 {
+        display: flex;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+// backsapce key styling maybe later
+
+.backspace {
+    background: var(--primary-grey);
+    width: 2em;
+    height: 1.5em;
+    padding-top: 0.15em;
+    padding-right: 0.2em;
+    font-size: 1.5em;
+    margin-top: 0.05em;
+    margin-left: 0.3em;
+    border-radius: 1em;
+    border-style: none;
+}
+
+.material-icons {
+    color: white;
+    margin-top: 0.1em;
+    font-size: 1em;
+}
+
+// Letter classes //
+
+.letter, .letter-correct, .letter-maybe, .letter-used {
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 0.05em;
+    margin: 0 0.25em 0.25em 0.25em;
+    color: white;
+    border-radius: 1em;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.letter {
+    background: var(--primary-grey);
+}
+
+.letter-correct{
+    background: var(--primary-blue);
+}
+
+.letter-maybe{
+    background: var(--primary-orange);
+}
+
+.letter-used {
+    background: #888888;
+
+}
+
+.ticks {
+    margin-top: 0.9em;
+}
+
+
+// Table Styling
+    
+table {
+
+    width:100%;
+    font-family: 'Poppins';
+    border-spacing: 0;
+
+    table, th, td {
+        border:1px solid var(--primary-blue);
+        background: var(--back-blue);
+        text-align: center;
+        margin: auto;
+        opacity: 90%;
+    }
+
+    td, th {
+        color: var(--primary-blue);
+        font-family: 'Poppins';
+        padding: 0.25em;
+        opacity: 100%;
+    }
+}
+
+.table-desktop {
+    display: table;
+}
+
+.table-mobile {
+    display: none;
+}
+
+// button classes
+
+.btn-get-started, .btn-play, .btn-log-in, .btn-enter {
+    margin: 1em auto;
+    color: white;
+    background: var(--primary-orange);
+    border: 1px solid var(--primary-blue);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    height: 2em;
+    width: 8em;
+    font-size: 1.5em;
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        background-color: var(--primary-blue);
+        border: 1px solid var(--primary-orange);
+        cursor: pointer;
+    }
+}
+
+.btn-enter {
+    width: 6em;
+    font-size: 1.5em;
+    padding: 0.1em;
+}
+// Login Styling
+
+.form-signin {
+    display: block;
+    background-color: var(--back-blue);
+    margin: 1em auto;
+    padding: 1em 0;
+    border-radius: 5em;
+    width: 50%;
+    opacity: 90%;
+   
+    
+
+    .form-floating {
+        font-size: 1.5em;
+        margin: 0.5em auto;
+     
+       
+
+    }
+
+    .form-control {
+        text-align: center;
+        border-radius: 0.5em;
+        margin-left: 1em;
+        padding: 0.4em;
+    }
+}
+   
+
+// Welcome page styling
+
+.home-smart, .home-master {
+    color: var(--primary-orange);
+}
+
+.master {
+    color: white;
+}
+
+
+
+// Play Page styling
+
+.page {
+    height: 100%;
+    margin: 0;
+}
+
+    
+.guess {
+    display: flex;
+    width:min-content;
+    margin: 0.5em auto 0.5em auto;
+}
+
+.guess-letter {
+    padding: 0 0.1em 1em 0.1em;
+}
+
+.letter-form {
+    text-align: center;
+    padding: 0;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 2.5em;
+    border-radius: 0.5em;
+    caret-color: transparent;
+}
+
+
+
+.points {
+    text-align: center;
+    background-color: var(--primary-orange);
+    color: white;
+    display: inline-block;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0.1em;
+    font-size: 1.25em;
+    width: 1.75em;
+    height: 1.65em;
+    border-radius: 0.5em;
+    border-width: 0.15em;
+    border-style:dotted;
+    -webkit-box-shadow:0 0 5px var(--primary-orange); 
+    -moz-box-shadow: 0 0 5px var(--primary-orange); 
+    box-shadow:0 0 5px var(--primary-orange);
+}
+
+.guesses {
+
+    margin-top: 0;
+    text-align: center;
+    width: min-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    .guess1, .guess2, .guess3, .guess4, .guess5, .guess6 {
+        text-align: center;
+        display: flex;
+    }
+}
+
+.guesses-enter {
+    margin-top: 0em;
+    text-align: center;
+    width: min-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    .guess1, .guess2, .guess3, .guess4, .guess5, .guess6 {
+        text-align: center;
+        display: flex;
+    }
+}
+
+.keyboard {
+
+    margin-top: 0em;
+    text-align: center;
+
+    .keyboard-display {
+        text-align: center;
+        margin: auto;
+        width: min-content;
+
+        .row1 {
+            display: flex;
+            margin: auto;
+            width: min-content;
+        }
+
+        .row2 {
+            display: flex;
+            margin: auto;
+            width: min-content;
+        }
+
+        .row3 {
+            display: flex;
+            margin: auto;
+            width: min-content;
+            margin-left: 3.3em;
+        }
+    }
+}
+
+.enter{
+    display: flex;
+    text-align: center;
+    margin: -0.5em auto;
+
+    .btn-get-started {
+        padding: auto;
+        height: 2em;
+        width: 6em;
+        font-size: 1.5em;
+    }
+
+}
+
+
+// above 1024px styling
+
+body {
+    background: url('../images/background.jpg')no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+// Navbar Styling
+
+.navbar {
+
+    background: var(--back-blue);
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+    
+.logo-img {
+    width: 80px;
+    margin-top: 7px;
+}
+
+.logo-img-mobile {
+    display: none;
+}
+
+.logo-word {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--primary-blue);
+    font-size:  24px;
+    margin: auto 10px;
+    
+    span {
+        color: white;
+    }
+
+    &:hover {
+        color: white;
+        
+        span {
+            color: var(--primary-blue);
+        }
+    }
+}
+    
+    
+        
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+    
+// nav styling
+
+nav {
+
+    display: flex;
+
+    a {
+        color: white;
+        text-decoration: none;
+    
+        &:hover{
+            font-weight: bold;
+        }
+    }
+
+    ul {
+        list-style-type: none;  
+        font-size: 16px;
+    
+    }
+}
+
+.mobile-menu-exit {
+    display: none;
+    cursor: pointer;
+    
+}
+
+
+
+
+
+
+.primary-nav {
+
+    li {
+        padding: 15px;
+        display: inline-block;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display:inline-block;
+}
+
+.drop-span {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #85C3FD;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    a {
+        padding: 5px 10px;
+        display: block;
+
+        &:hover {
+            background: var(--primary-orange);
+        }
+    }
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+            
+ 
+
+.secondary-nav {
+
+    li {
+        padding: 15px;
+        display: inline-block; 
+    }
+}
+
+.nav-sign-up a {
+    color: white;
+    padding: 2px 8px;
+    border: 3px solid var(--primary-orange);
+    border-radius: 2.5em;
+    
+    &:hover {
+        background: var(--primary-orange);
+        color: black;
+    }
+}    
+    
+
+@media screen and ( max-width: $laptop) {
+
+    .logo-word {
+        display: none;
+    }
+
+}
+
+@media screen and ( max-width: $tablet) {
+
+    // headers
+
+    h1 {
+        margin: 5px auto;
+        text-align: center;
+        font-size: 30px;
+        
+    }
+
+    h2 {
+        margin-top: 5px auto;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 15;
+        padding: 10px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .alerts {
+        font-size: 15px;
+        padding: 5px;
+        background-color: pink;
+        color: black;
+    }
+
+    .home-smart, .home-master {
+        color: white;
+    }
+
+    // Letter classes //
+
+    .letter, .letter-correct, .letter-maybe, .letter-used {
+        font-size: 1em;
+    }
+     
+    // sign-in-up 
+
+    .form-signin {
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        margin: 1em auto;
+        padding: 1em 0;
+    
+    }
+    .form-floating {
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+    }
+   
+  
+    // backspace
+
+    .backspace {
+        font-size: 1em ;
+        margin-top: 0em;
+    }
+
+    // points
+
+    .points {
+        font-size: 0.75em;
+        margin-top: 0.5em;
+    }
+
+    // enter button
+
+
+    .enter{
+
+        .btn-get-started {
+            font-size: 1em;
+        }
+    }
+
+    .btn-enter {
+        width: 4em;
+        font-size: 1em;
+        padding: 0.1em;
+    }
+
+    .ticks {
+        margin-top: 0.7em;
+    }
+
+
+    .keyboard .keyboard-display .row3 {
+        margin-left: 2em;
+    }
+    // how to play styling
+
+    .new-page {
+        background-color: transparent;
+        width: 100%;
+        
+    }
+        
+
+    // input form
+
+    .letter-form {
+        width: 1.5em;
+        height: 1.5em;
+        font-size: 1.5em;
+    }
+
+
+    body {
+        background: url('../images/mobile/background.jpg');
+        padding: 0 5px;
+    }
+
+    .logo-word {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+
+    nav {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        width: 67%;
+        right: 0;
+        top: 0;
+        background: var(--primary-blue);
+        height: 100vh;
+    }
+
+    .mobile-menu-exit {
+        display: block;
+        float:right;
+    }
+
+    .primary-nav {
+
+        li {
+            display: block;
+        }
+    }
+
+    .dropdown {
+        margin-left: 40px;
+        margin-top: 40px;
+    }
+
+    .drop-span {
+        display: none;
+    }
+
+    .dropdown-content {
+        display: block;
+        background: none;
+        position: relative;
+        box-shadow: none;
+
+        a {
+            padding: 5px 10px;
+            display: block;
+    
+            &:hover {
+                background: none;
+            }
+        }
+    }
+    
+    .secondary-nav {
+        li{
+            display: block;
+        }
+    }
+
+    .table-desktop {
+        display: none;
+    }
+    
+    .table-mobile {
+        display: table;
+    }
+
+
+}
+
+@media screen and ( max-width: $phone) {
+
+    .logo-img {
+       display: none;
+    }
+    
+    .logo-img-mobile {
+        display: flex;
+        height: 40px;
+    }
+
+}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Global</h1>
+
+
+<table class="table-desktop">
+    <thead>
+        <tr>
+            <th colspan="2"></th>
+            <th colspan="2">3</th>
+            <th colspan="2">4</th>
+            <th colspan="2">5</th>
+            <th colspan="2">6</th>
+            <th colspan="2">7</th>
+            <th colspan="2">8</th>
+            <th colspan="2">9</th>
+            <th colspan="1"></th>
+        </tr>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Atts</th>
+            <th>Pts</th>
+            <th>Atts</th>
+            <th>Pts</th>
+            <th>Atts</th>
+            <th>Pts</th>
+            <th>Atts</th>
+            <th>Pts</th>
+            <th>Atts</th>
+            <th>Pts</th>
+            <th>Atts</th>
+            <th>Pts</th>
+            <th>Atts</th>
+            <th>Pts</th>
+            <th>Total</th>
+
+        </tr>
+    </thead>
+   {% for user in users %}
+    <tbody>
+        <tr>
+            <td> {{ loop.index }} </td>
+            <td> {{ user.name }} </td>
+
+          {% for i in range(7) %}
+
+            <td> {{user.groups[0].points[i].attempts }} </td>
+            <td> {{ user.groups[0].points[i].points }} </td>
+
+          {% endfor %}
+             <td> {{ user.groups[0].total_points }} </td>
+        </tr>
+     {% endfor %}
+    </tbody>
+</table>
+
+<table class="table-mobile">
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+
+   {% for user in users %}
+    <tbody>
+        <tr>
+            <td> {{ loop.index }} </td>
+            <td> {{ user.name }} </td>
+            <td> {{ user.groups[0].total_points }} </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+
+
+{% endblock %}

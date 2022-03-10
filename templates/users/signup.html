@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+  <main class="form-signin">
+    <form method="post">
+      <h1 class="log-in-header">Please Sign up</h1>
+
+      <div class="form-floating">
+        <label for="floatingInput">Name:</label>
+        <input type="text" class="form-control" id="floatingInput" name="name" placeholder="Name">
+      </div>
+
+      <div class="form-floating">
+        <label for="floatingInput">Email address:</label>
+        <input type="email" class="form-control" id="floatingInput" name="email"placeholder="name@example.com">
+      </div>
+
+      <div class="form-floating">
+        <label for="floatingPassword">Password:</label>
+        <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+      </div>
+
+
+      <div class="btn-login">
+        <button class="btn-log-in" type="submit">Sign Up</button>
+      </div>
+
+      <div class="built">
+        <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+      </div>
+
+    </form>
+  </main>
+
+
+
+{% endblock %}

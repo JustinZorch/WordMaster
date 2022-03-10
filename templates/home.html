@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <section class="main">
+        <div class="container-main">
+            <h1>Welcome to <br><span class="word">Word</span><span class="home-master">Master</span></h1>
+            <h3>Are you <span class="home-smart">smart</span> enough? <br>Do you have what it takes?</h3>
+
+            <div class="example">
+                <img class= "example-img" src="../static/images/example.svg" alt="Example">
+            </div>
+
+           <div class="btn-get">
+                <button class="btn-get-started"> <a href="{{ url_for('users.register_user') }}">Get Started</a></button>
+           </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+    .correct {
+        display: flex;
+        margin: auto;
+        width: min-content;
+    }
+
+    .guess1 {
+        display: flex;
+        margin: 0 auto 2em auto;
+        width: min-content;
+    }
+
+</style>
+
+<h1>Well Done &#128512</h1>
+
+<div class="correct">
+
+    <div class="guess1">
+
+        {% for letter in word %}
+
+        <span class="letter-correct">{{ letter }}</span>
+
+
+        {% endfor %}
+
+    </div>
+</div>
+
+<h2>was the correct word.</h2>
+<h2>You earned <span class="points">{{ points }}</span> points!!!</h2>
+
+{% endblock %}

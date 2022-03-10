@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <style>
+
+        .correct {
+            display: flex;
+            text-align: center;
+            margin: auto;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+
+
+        .guess1 {
+            display: flex;
+            text-align: center;
+            margin: auto;
+        }
+
+    </style>
+
+    <h1>Welcome</h1>
+
+    <div class="correct">
+
+        <div class="guess1">
+
+            {% for let in name %}
+
+            <span class="letter-correct">{{ let }}</span>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <h2>to WordMaster.</h2>
+    <h2>I hope you have fun </h2>
+    <h2> and enjoy!!! </h2>
+
+    <div class="btn-get">
+        <button class="btn-play"><a   href="{{ url_for('play.letters_3') }}">Play Now</a></button>
+    </div>
+
+
+
+{% endblock %}
