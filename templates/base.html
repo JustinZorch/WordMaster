@@ -85,6 +85,10 @@
             nav.classList.remove('menu-active');
         })
 
+        $("#prospects_form").submit(function(e) {
+            e.preventDefault(); // <==stop page refresh==>
+        });
+
     </script>
 
  {% block content %}

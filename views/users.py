@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, url_for, redirect, session, flash
 
 from common.database import Database
+from common.utils import Utils
 from models.user.user import User
 
 user_blueprint = Blueprint('users', __name__)
@@ -17,6 +18,8 @@ def register_user():
         if email == "" or password == "" or name == "":
             flash("Please don't leave any fields blank.", "danger")
             return redirect(url_for('.register_user'))
+        elif not Utils.email_is_valid(email):
+            flash('The e-mail does not have the right format test@test.com')
         else:
 
             if User.is_email_used(email):

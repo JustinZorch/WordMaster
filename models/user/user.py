@@ -39,29 +39,19 @@ class User:
 
     def find_by_email(email: str):
 
-        try:
-            return Database.find_one("users", {"email": email})
-
-        except TypeError:
-            raise UserErrors.UserNotFoundError('A user with this e-mail was not found.')
+        return Database.find_one("users", {"email": email})
 
     def register_user(email, password, name):
-        # first checking valid email format
-
-        if not Utils.email_is_valid(email):
-            raise UserErrors.InvalidEmailError('The e-mail does not have the right format')
-        ### does the wrong format stop the registration of a new user??
         new_user = User(email, password, name)
         new_user.create_words()
         Database.insert(new_user.collection, new_user.json())
 
     def is_email_used(email: str):
 
-        if User.find_by_email(email) is not None:
-            return False
-            # raise UserErrors.UserAlreadyRegisteredError('The e-mail you used to register already exists')
-        else:
+        if User.find_by_email(email) is None:
             return True
+        else:
+            return False
 
     def json(self) -> Dict:
         return {

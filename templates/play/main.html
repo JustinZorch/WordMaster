@@ -29,7 +29,7 @@
 
                 <!-- need to add the last element manually which auto tabs back to begin or button-->
                 <div class="guess-letter">
-                    <input type="text" autocomplete="off" class="letter-form" id="letter+{{length}}" name="letter{{length}}" onkeydown="backspace(this, document.form_guess.letter{{length-1}}, event.keyCode)" onKeyup="autotab(this, this)" maxlength="1" style='text-transform:uppercase'>
+                    <input type="text" autocomplete="off" class="letter-form" id="letter+{{length}}" name="letter{{length}}" onkeydown="backspace(this, document.form_guess.letter{{length-1}}, event.keyCode)" onKeyup="autotab(this, document.btn-get-started)" maxlength="1" style='text-transform:uppercase'>
                 </div>
 
             </div>
@@ -71,7 +71,7 @@
 
         <div class="guess1">
             <div class="enter">
-                <button type="submit" class="btn-get-started" id="enter_button" >Enter </button>
+                <button type="submit" class="btn-get-started" id="enter_button" onClick="this.form.submit(); this.disabled=true; this.value='Sending…'; " >Enter </button>
             </div>
             <span class="letter-correct ticks">&#10003&#10003</span>
             <span class="letter-maybe ticks"> &#10003 </span>
