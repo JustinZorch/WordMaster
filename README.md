@@ -13,19 +13,6 @@ Install flask, run and have fun.
 
 Clone it and go from there.
 
-### Deploying / Publishing
-
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
-
-heroku?
-
-```shell
-packagemanager deploy awesome-project -s server.com -u username -p password
-```
-
-And again you'd need to tell what the previous code actually does.
-
 ## Features
 
 * 3,4,5,6,7,8,9 letter word daily challenge
