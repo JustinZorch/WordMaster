@@ -4,3 +4,4 @@ Checks.docx
 /.idea/
 /test.py/
 /node_modules/
+__pycache__
