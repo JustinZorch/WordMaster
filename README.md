@@ -1,9 +1,9 @@
 ![logo](https://user-images.githubusercontent.com/92835545/157566997-cd65c0c3-cb33-4fbe-a6e4-ebf815e28fc8.svg)
 
-# WordMaster
+# WordMaster!
 > Are you smart enough? Do you have what it takes?
 
-My take on the popular Wordle game with some added features to make it more fun and competitive amongst friends and family. 
+My take on the popular Wordle game with some added features to make it more fun and competitive amongst friends and family.
 
 ## Installing / Getting started
 
@@ -23,4 +23,3 @@ Clone it and go from there.
 
 - Project homepage: https://wordmaster2022.herokuapp.com
 - Repository: https://github.com/JustinZorch/WordMaster
-
